@@ -25,24 +25,31 @@ namespace ImageGallery.Client.Controllers
 
         public async Task<IActionResult> Index()
         {
-            await LogIdentityInformation();
+            //try
+            //{
+                await LogIdentityInformation();
 
-            var httpClient = _httpClientFactory.CreateClient("APIClient");
+                var httpClient = _httpClientFactory.CreateClient("APIClient");
 
-            var request = new HttpRequestMessage(
-                HttpMethod.Get,
-                "/api/images/");
+                var request = new HttpRequestMessage(
+                    HttpMethod.Get,
+                    "/api/images/");
 
-            var response = await httpClient.SendAsync(
-                request, HttpCompletionOption.ResponseHeadersRead);
+                var response = await httpClient.SendAsync(
+                    request, HttpCompletionOption.ResponseHeadersRead);
 
-            response.EnsureSuccessStatusCode();
+                response.EnsureSuccessStatusCode();
 
-            using (var responseStream = await response.Content.ReadAsStreamAsync())
-            {
-                var images = await JsonSerializer.DeserializeAsync<List<Image>>(responseStream);
-                return View(new GalleryIndexViewModel(images ?? new List<Image>()));
-            }
+                using (var responseStream = await response.Content.ReadAsStreamAsync())
+                {
+                    var images = await JsonSerializer.DeserializeAsync<List<Image>>(responseStream);
+                    return View(new GalleryIndexViewModel(images ?? new List<Image>()));
+                }
+            //}
+            //catch (Exception)
+            //{
+            //    return View(new GalleryIndexViewModel(new List<Image>()));
+            //}
         }
 
         public async Task<IActionResult> EditImage(Guid id)
@@ -138,8 +145,7 @@ namespace ImageGallery.Client.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Policy = "UserCanAddImage")]
-        //[Authorize(Roles = "PayingUser")]
+        [Authorize(Roles = "PayingUser")]
         public async Task<IActionResult> AddImage(AddImageViewModel addImageViewModel)
         {
             if (!ModelState.IsValid)

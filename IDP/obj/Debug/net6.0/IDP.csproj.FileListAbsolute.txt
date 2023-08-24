@@ -1,4 +1,6 @@
 C:\Homespace\IdentityServer\1.IDP\IDP\bin\Debug\net6.0\appsettings.json
+C:\Homespace\IdentityServer\1.IDP\IDP\bin\Debug\net6.0\keys\is-signing-key-8ACC56C5B1790F4A7C3C4581F2310CF9.json
+C:\Homespace\IdentityServer\1.IDP\IDP\bin\Debug\net6.0\IDP.staticwebassets.runtime.json
 C:\Homespace\IdentityServer\1.IDP\IDP\bin\Debug\net6.0\IDP.exe
 C:\Homespace\IdentityServer\1.IDP\IDP\bin\Debug\net6.0\IDP.deps.json
 C:\Homespace\IdentityServer\1.IDP\IDP\bin\Debug\net6.0\IDP.runtimeconfig.json
@@ -30,6 +32,8 @@ C:\Homespace\IdentityServer\1.IDP\IDP\obj\Debug\net6.0\IDP.AssemblyInfoInputs.ca
 C:\Homespace\IdentityServer\1.IDP\IDP\obj\Debug\net6.0\IDP.AssemblyInfo.cs
 C:\Homespace\IdentityServer\1.IDP\IDP\obj\Debug\net6.0\IDP.csproj.CoreCompileInputs.cache
 C:\Homespace\IdentityServer\1.IDP\IDP\obj\Debug\net6.0\IDP.MvcApplicationPartsAssemblyInfo.cache
+C:\Homespace\IdentityServer\1.IDP\IDP\obj\Debug\net6.0\IDP.RazorAssemblyInfo.cache
+C:\Homespace\IdentityServer\1.IDP\IDP\obj\Debug\net6.0\IDP.RazorAssemblyInfo.cs
 C:\Homespace\IdentityServer\1.IDP\IDP\obj\Debug\net6.0\staticwebassets\msbuild.IDP.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Homespace\IdentityServer\1.IDP\IDP\obj\Debug\net6.0\staticwebassets\msbuild.build.IDP.props
 C:\Homespace\IdentityServer\1.IDP\IDP\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.IDP.props
@@ -44,7 +48,3 @@ C:\Homespace\IdentityServer\1.IDP\IDP\obj\Debug\net6.0\refint\IDP.dll
 C:\Homespace\IdentityServer\1.IDP\IDP\obj\Debug\net6.0\IDP.pdb
 C:\Homespace\IdentityServer\1.IDP\IDP\obj\Debug\net6.0\IDP.genruntimeconfig.cache
 C:\Homespace\IdentityServer\1.IDP\IDP\obj\Debug\net6.0\ref\IDP.dll
-C:\Homespace\IdentityServer\1.IDP\IDP\bin\Debug\net6.0\keys\is-signing-key-8ACC56C5B1790F4A7C3C4581F2310CF9.json
-C:\Homespace\IdentityServer\1.IDP\IDP\bin\Debug\net6.0\IDP.staticwebassets.runtime.json
-C:\Homespace\IdentityServer\1.IDP\IDP\obj\Debug\net6.0\IDP.RazorAssemblyInfo.cache
-C:\Homespace\IdentityServer\1.IDP\IDP\obj\Debug\net6.0\IDP.RazorAssemblyInfo.cs

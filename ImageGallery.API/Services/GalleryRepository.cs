@@ -28,7 +28,8 @@ namespace ImageGallery.API.Services
         {
             return await _context.Images
                 .Where(i => i.OwnerId == ownerId)
-                .OrderBy(i => i.Title).ToListAsync();
+                .OrderBy(i => i.Title)
+                .ToListAsync();
         }
 
         public async Task<bool> IsImageOwnerAsync(Guid id, string ownerId)

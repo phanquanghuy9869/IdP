@@ -9,14 +9,14 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews()
-    .AddJsonOptions(configure => 
+    .AddJsonOptions(configure =>
         configure.JsonSerializerOptions.PropertyNamingPolicy = null);
 
 JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
 
 builder.Services.AddAccessTokenManagement();
 
-// create an HttpClient used for accessing the API
+// create an HttpClient used for accessing the API + add the access token to every request
 builder.Services.AddHttpClient("APIClient", client =>
 {
     client.BaseAddress = new Uri(builder.Configuration["ImageGalleryAPIRoot"]);
@@ -41,11 +41,34 @@ builder.Services.AddAuthentication(options =>
 .AddOpenIdConnect(OpenIdConnectDefaults.AuthenticationScheme, options =>
 {
     options.SignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-    options.Authority = "https://localhost:44300/";
+    options.Authority = "https://localhost:5001/";
     options.ClientId = "imagegalleryclient";
     options.ClientSecret = "secret";
     options.ResponseType = "code";
+    // Save token to cookie
     options.SaveTokens = true;
+    //options.
+    // Get claim from user info endpoint so no need all claim in id token => lighter id token
+    options.GetClaimsFromUserInfoEndpoint = true;
+    //options.Cl
+    // remove filter = add
+    options.ClaimActions.Remove("aud");
+    options.ClaimActions.DeleteClaim("sid");
+    options.ClaimActions.DeleteClaim("idp");
+    options.Scope.Add("roles");
+    options.Scope.Add("imagegalleryapi.read");
+    options.Scope.Add("imagegalleryapi.write");
+    options.Scope.Add("country");
+    options.ClaimActions.MapJsonKey("role", "role");
+    options.ClaimActions.MapUniqueJsonKey("country", "country");
+    options.TokenValidationParameters = new()
+    {
+        NameClaimType = "given_name",
+        // set this so framework know this claim is role
+        RoleClaimType = "role"
+    };
+    //options.SignedOutCallbackPath = "/";
+    //options.Scope.Clear();
     //options.Scope.Add("openid");
     //options.Scope.Add("profile");
     //options.CallbackPath = new PathString("signin-oidc");
@@ -77,12 +100,20 @@ builder.Services.AddAuthentication(options =>
     //---
     //options.Scope.Add("openid");
     //options.Scope.Add("profile");
+    //options.Events = new OpenIdConnectEvents
+    //{
+    //    OnTicketReceived = ctx =>
+    //    {
+    //        // can be First, Second, Index, whatever
+    //        var test = ctx.ReturnUri;
+    //        return Task.CompletedTask;
+    //    }
+    //};
 });
 
-builder.Services.AddAuthorization(authorizationOptions =>
+builder.Services.AddAuthorization(authOptions =>
 {
-    authorizationOptions.AddPolicy("UserCanAddImage",
-        AuthorizationPolicies.CanAddImage());
+    authOptions.AddPolicy("UserCanAddImage", AuthorizationPolicies.CanAddImage());
 });
 
 

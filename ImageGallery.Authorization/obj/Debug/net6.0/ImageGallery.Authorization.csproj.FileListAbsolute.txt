@@ -1,0 +1,12 @@
+C:\Homespace\IdentityServer\1.IDP\ImageGallery.Authorization\bin\Debug\net6.0\ImageGallery.Authorization.deps.json
+C:\Homespace\IdentityServer\1.IDP\ImageGallery.Authorization\bin\Debug\net6.0\ImageGallery.Authorization.dll
+C:\Homespace\IdentityServer\1.IDP\ImageGallery.Authorization\bin\Debug\net6.0\ImageGallery.Authorization.pdb
+C:\Homespace\IdentityServer\1.IDP\ImageGallery.Authorization\obj\Debug\net6.0\ImageGallery.Authorization.csproj.AssemblyReference.cache
+C:\Homespace\IdentityServer\1.IDP\ImageGallery.Authorization\obj\Debug\net6.0\ImageGallery.Authorization.GeneratedMSBuildEditorConfig.editorconfig
+C:\Homespace\IdentityServer\1.IDP\ImageGallery.Authorization\obj\Debug\net6.0\ImageGallery.Authorization.AssemblyInfoInputs.cache
+C:\Homespace\IdentityServer\1.IDP\ImageGallery.Authorization\obj\Debug\net6.0\ImageGallery.Authorization.AssemblyInfo.cs
+C:\Homespace\IdentityServer\1.IDP\ImageGallery.Authorization\obj\Debug\net6.0\ImageGallery.Authorization.csproj.CoreCompileInputs.cache
+C:\Homespace\IdentityServer\1.IDP\ImageGallery.Authorization\obj\Debug\net6.0\ImageGallery.Authorization.dll
+C:\Homespace\IdentityServer\1.IDP\ImageGallery.Authorization\obj\Debug\net6.0\refint\ImageGallery.Authorization.dll
+C:\Homespace\IdentityServer\1.IDP\ImageGallery.Authorization\obj\Debug\net6.0\ImageGallery.Authorization.pdb
+C:\Homespace\IdentityServer\1.IDP\ImageGallery.Authorization\obj\Debug\net6.0\ref\ImageGallery.Authorization.dll

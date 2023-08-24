@@ -31,7 +31,13 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Gallery" asp-action="AddImage">Add an Image</a>
                         </li>
-                        }
+                        } 
+                       @* @if (User.IsInRole("PayingUser"))
+                        {
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Gallery" asp-action="AddImage">Add an Image</a>
+                        </li>
+                        }*@
                           @if (User.Identity.IsAuthenticated)
                           {
                          <li>
